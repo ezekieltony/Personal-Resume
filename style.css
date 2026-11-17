@@ -1,0 +1,312 @@
+/* ==========================================================
+   Ezekiel Tony - Personal Resume Website
+   IIM Bangalore BBA DBE, Web Development CSS Assignment
+   Sections: 1 Variables, 2 Base (element selectors),
+   3 Layout, 4 Navigation (ID + class), 5 Hero, 6 Cards,
+   7 Lists and tags, 8 Contact, 9 Footer, 10 Responsive
+   ========================================================== */
+
+/* 1. COLOR PALETTE AND FONTS (CSS variables, defined once, reused everywhere) */
+:root {
+  --bg: #F7F6F2;          /* warm off-white page background */
+  --bg-alt: #EFEDE6;      /* slightly darker band for alternate sections */
+  --text: #202124;        /* deep charcoal */
+  --muted: #6B6B6B;       /* secondary text (darkened from #777 for readability) */
+  --accent: #315C4B;      /* deep forest green */
+  --card: #FFFFFF;
+  --border: #E5E3DC;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+}
+
+/* 2. BASE STYLES - ELEMENT SELECTORS */
+* {
+  box-sizing: border-box;   /* padding and border stay inside element width */
+}
+
+html {
+  scroll-behavior: smooth;  /* smooth jump when nav links are clicked */
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h1 { font-size: 3.5rem; font-weight: 700; max-width: 14em; }
+h2 { font-size: 2.2rem; font-weight: 500; margin-bottom: 2rem; }
+h3 { font-size: 1.2rem; font-weight: 500; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. LAYOUT HELPERS - CLASS SELECTORS */
+.container {
+  max-width: 1050px;       /* keeps content from stretching on wide screens */
+  margin: 0 auto;          /* centers the container */
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+/* 4. NAVIGATION BAR - ID selector + Flexbox + Positioning */
+#site-header {
+  position: sticky;        /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;             /* sits above page content */
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;                    /* Flexbox: logo left, links right */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Keeps section headings from hiding under the sticky nav */
+section {
+  scroll-margin-top: 4rem;
+}
+
+/* 5. HERO SECTION */
+.hero {
+  padding: 7rem 0 6rem;
+}
+
+.hero-location {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.hero-intro {
+  max-width: 36em;
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #244538;
+  border-color: #244538;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+/* About text */
+.about-text {
+  max-width: 40em;
+  font-size: 1.05rem;
+}
+
+/* 6. CARDS - CSS Grid */
+.card-grid {
+  display: grid;           /* Grid: equal-width columns with a gap */
+  gap: 1.5rem;
+}
+
+.two-col   { grid-template-columns: repeat(2, 1fr); }
+.three-col { grid-template-columns: repeat(3, 1fr); }
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.card-meta {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-status {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 7. TAGS AND ACHIEVEMENTS */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-list li {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;      /* pill shape */
+  padding: 0.2rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.achievement-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.achievement-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.achievement-list span {
+  color: var(--accent);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* 8. CONTACT */
+.contact-intro {
+  color: var(--muted);
+}
+
+.contact-list li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+}
+
+.contact-list span {
+  width: 6rem;
+  color: var(--muted);
+}
+
+.contact-list a {
+  border-bottom: 1px solid transparent;
+}
+
+.contact-list a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* 9. FOOTER - ID selector */
+#site-footer {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+#site-footer p {
+  margin: 0;
+}
+
+/* 10. RESPONSIVE DESIGN - MEDIA QUERIES */
+@media (max-width: 900px) {
+  .three-col { grid-template-columns: 1fr; }
+  .nav { flex-direction: column; gap: 0.75rem; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.25rem; }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+  .hero { padding: 4rem 0 3.5rem; }
+  .section { padding: 3.5rem 0; }
+  .two-col { grid-template-columns: 1fr; }
+  .achievement-list li { flex-direction: column; gap: 0.2rem; }
+  .achievement-list span { text-align: left; }
+  .contact-list li { flex-direction: column; gap: 0; }
+  section { scroll-margin-top: 7rem; }  /* taller nav on phones */
+}
