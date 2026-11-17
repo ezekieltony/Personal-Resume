@@ -43,8 +43,18 @@ h1, h2, h3 {
   margin: 0 0 1rem;
 }
 
-h1 { font-size: 3.5rem; font-weight: 700; max-width: 14em; }
-h2 { font-size: 2.2rem; font-weight: 500; margin-bottom: 2rem; }
+h1 { font-size: 3.6rem; font-weight: 700; }
+h2 { font-size: 2.4rem; font-weight: 500; margin-bottom: 1rem; }
+
+/* short accent rule under every section heading (pseudo-element) */
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 0.75rem;
+  background-color: var(--accent);
+}
 h3 { font-size: 1.2rem; font-weight: 500; }
 
 p { margin: 0 0 1rem; }
@@ -177,11 +187,107 @@ section {
   color: #FFFFFF;
 }
 
-/* About text */
-.about-text {
-  max-width: 40em;
-  font-size: 1.05rem;
+
+
+/* Section intro line under each heading */
+.section-intro {
+  color: var(--muted);
+  max-width: 36em;
+  margin-bottom: 2.5rem;
 }
+
+/* Hero layout: text left, profile card right */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.profile-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.profile-top h3 { margin: 0; }
+
+.monogram {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;          /* perfect circle */
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.profile-facts { margin: 0; }
+
+.profile-facts div {
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.profile-facts dt {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.profile-facts dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Highlights strip: full-width green band */
+.highlights {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  padding: 2rem 0;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight-grid p { margin: 0; }
+
+.highlight-grid strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* About: heading column + text column */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+}
+
+.about-text { font-size: 1.05rem; }
 
 /* 6. CARDS - CSS Grid */
 .card-grid {
@@ -191,6 +297,8 @@ section {
 
 .two-col   { grid-template-columns: repeat(2, 1fr); }
 .three-col { grid-template-columns: repeat(3, 1fr); }
+
+.three-col .card { border-top: 4px solid var(--accent); }
 
 .card {
   background-color: var(--card);
@@ -203,6 +311,13 @@ section {
 .card:hover {
   border-color: var(--accent);
   transform: translateY(-3px);
+}
+
+.card-year {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
 .card-meta {
@@ -256,14 +371,24 @@ section {
 }
 
 /* 8. CONTACT */
-.contact-intro {
-  color: var(--muted);
+/* Contact: dark green band */
+.section-dark {
+  background-color: var(--accent);
+  color: #FFFFFF;
 }
+
+.section-dark h2 { color: #FFFFFF; }
+.section-dark h2::after { background-color: #FFFFFF; }
+.section-dark .section-intro { color: #D6E4DD; }
+.section-dark a { color: #FFFFFF; border-bottom: 1px solid #8FB3A3; }
+.section-dark .contact-list span { color: #D6E4DD; }
 
 .contact-list li {
   display: flex;
   gap: 1.5rem;
-  padding: 0.6rem 0;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #4A7563;
 }
 
 .contact-list span {
@@ -271,13 +396,7 @@ section {
   color: var(--muted);
 }
 
-.contact-list a {
-  border-bottom: 1px solid transparent;
-}
-
-.contact-list a:hover {
-  border-bottom-color: var(--accent);
-}
+.section-dark a:hover { border-bottom-color: #FFFFFF; }
 
 /* 9. FOOTER - ID selector */
 #site-footer {
@@ -295,12 +414,14 @@ section {
 /* 10. RESPONSIVE DESIGN - MEDIA QUERIES */
 @media (max-width: 900px) {
   .three-col { grid-template-columns: 1fr; }
+  .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .nav { flex-direction: column; gap: 0.75rem; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.25rem; }
 }
 
 @media (max-width: 600px) {
   h1 { font-size: 2.4rem; }
+  .highlight-grid { grid-template-columns: 1fr; gap: 1rem; }
   h2 { font-size: 1.8rem; }
   .hero { padding: 4rem 0 3.5rem; }
   .section { padding: 3.5rem 0; }
