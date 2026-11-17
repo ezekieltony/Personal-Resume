@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ezekiel Tony | Resume</title>
-  <meta name="description" content="Personal resume website of Ezekiel Tony, B.Tech CSE at FCRIT and BBA (DBE) at IIM Bangalore.">
+  <title>Ezekiel Tony | Portfolio</title>
+  <meta name="description" content="Portfolio of Ezekiel Tony, B.Tech CSE at FCRIT and BBA (DBE) at IIM Bangalore.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,12 +34,12 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="hero-location">Ezekiel Tony, Mumbai, India</p>
+          <p class="pill">First-year undergraduate in Mumbai</p>
           <h1>Technology, Business &amp; Everything In Between.</h1>
           <p class="hero-intro">I'm Ezekiel Tony, a Computer Science undergraduate at FCRIT and a BBA student at IIM Bangalore, interested in exploring the intersection of technology, business, and innovation.</p>
           <div class="button-row">
             <a class="btn btn-primary" href="#projects">Explore my work</a>
-            <a class="btn btn-outline" href="#contact">Contact me</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
           </div>
         </div>
         <aside class="profile-card">
@@ -47,24 +47,24 @@
             <div class="monogram">ET</div>
             <div>
               <h3>Ezekiel Tony</h3>
-              <p class="profile-sub">First-year undergraduate</p>
+              <p class="profile-sub">Mumbai, Maharashtra, India</p>
             </div>
           </div>
           <dl class="profile-facts">
-            <div><dt>Studying</dt><dd>B.Tech CSE at FCRIT and BBA (DBE) at IIM Bangalore</dd></div>
-            <div><dt>Based in</dt><dd>Mumbai, Maharashtra</dd></div>
-            <div><dt>Interested in</dt><dd>Software, product, technology consulting, entrepreneurship</dd></div>
+            <div><dt>Studying</dt><dd>B.Tech CSE, FCRIT<br>BBA (DBE), IIM Bangalore</dd></div>
+            <div><dt>Focus</dt><dd>Software, AI, product, technology consulting</dd></div>
+            <div><dt>Recent work</dt><dd>Quantum cryptography project and gig-economy research</dd></div>
           </dl>
         </aside>
       </div>
     </section>
 
-    <!-- Highlights strip -->
+    <!-- Highlights (overlaps the bottom of the hero) -->
     <section class="highlights">
       <div class="container highlight-grid">
-        <p><strong>Finalist</strong>NMIMS Qiskit Fall Fest 2026</p>
-        <p><strong>Selected participant</strong>ISB Consulting Consortium 2026</p>
-        <p><strong>Round 2</strong>IIM Shillong Case Competition</p>
+        <div class="highlight"><strong>Finalist</strong><span>NMIMS Qiskit Fall Fest 2026</span></div>
+        <div class="highlight"><strong>Selected participant</strong><span>ISB Consulting Consortium 2026</span></div>
+        <div class="highlight"><strong>Round 2</strong><span>IIM Shillong Case Competition</span></div>
       </div>
     </section>
 
@@ -93,14 +93,16 @@
         <p class="section-intro">Two programmes running side by side, one in engineering and one in management.</p>
         <div class="card-grid two-col">
           <article class="card">
-            <p class="card-year">2026 to 2030</p>
+            <p class="chip">2026 to 2030</p>
             <h3>Fr. C. Rodrigues Institute of Technology (FCRIT), Vashi</h3>
             <p>Bachelor of Technology (B.Tech) in Computer Science and Engineering</p>
+            <ul class="tag-list"><li>Computer science</li><li>Software development</li></ul>
           </article>
           <article class="card">
-            <p class="card-year">2026 to 2029</p>
+            <p class="chip">2026 to 2029</p>
             <h3>Indian Institute of Management Bangalore</h3>
             <p>Bachelor of Business Administration (BBA) in Digital Business and Entrepreneurship</p>
+            <ul class="tag-list"><li>Digital business</li><li>Entrepreneurship</li></ul>
           </article>
         </div>
       </div>
@@ -112,28 +114,25 @@
         <h2>Projects and research</h2>
         <p class="section-intro">A quantum computing experiment, a research study, and a hackathon concept.</p>
         <div class="card-grid three-col">
-          <article class="card">
+          <article class="card card-project">
+            <p class="chip">Quantum computing</p>
             <h3>QuantumShield: BB84 Quantum Key Distribution</h3>
             <p>A quantum computing experiment that simulates the BB84 quantum cryptography protocol using Qiskit. Built for NMIMS Qiskit Fall Fest 2026.</p>
-            <ul class="tag-list">
-              <li>Qiskit</li><li>Python</li><li>Quantum cryptography</li>
-            </ul>
+            <ul class="tag-list"><li>Qiskit</li><li>Python</li><li>Quantum cryptography</li></ul>
             <p class="card-status">Reached the finalist stage</p>
           </article>
-          <article class="card">
+          <article class="card card-project">
+            <p class="chip">Research</p>
             <h3>AI &amp; Technology Research: NSS SRCC Samshodhana</h3>
             <p>Research on income volatility and health consequences for urban delivery workers who are managed by AI-driven automated dispatch systems.</p>
-            <ul class="tag-list">
-              <li>Algorithmic management</li><li>Platform economics</li><li>Worker wellbeing</li>
-            </ul>
+            <ul class="tag-list"><li>Algorithmic management</li><li>Platform economics</li><li>Worker wellbeing</li></ul>
             <p class="card-status">NSS SRCC Samshodhana Student Research Program</p>
           </article>
-          <article class="card">
+          <article class="card card-project">
+            <p class="chip">Hackathon</p>
             <h3>Sangyan: Investor Resilience Concept</h3>
             <p>A hackathon concept that combines financial claim analysis, scam escalation mapping, and scam recovery assistance to help investors.</p>
-            <ul class="tag-list">
-              <li>Fintech</li><li>Fraud awareness</li><li>Product concept</li>
-            </ul>
+            <ul class="tag-list"><li>Fintech</li><li>Fraud awareness</li><li>Product concept</li></ul>
             <p class="card-status">Participant, IIT (BHU) Sangyan Hackathon 2026</p>
           </article>
         </div>
@@ -145,12 +144,12 @@
       <div class="container">
         <h2>Achievements and activities</h2>
         <p class="section-intro">Competitions and programmes from the past few months.</p>
-        <ul class="achievement-list">
-          <li><strong>NMIMS Qiskit Fall Fest 2026</strong><span>Finalist</span></li>
-          <li><strong>ISB Consulting Consortium 2026</strong><span>Selected participant</span></li>
-          <li><strong>IIT (BHU) Sangyan Hackathon 2026</strong><span>Participant</span></li>
-          <li><strong>IIM Shillong Case Competition</strong><span>Selected for Round 2</span></li>
-        </ul>
+        <div class="card-grid two-col">
+          <div class="card card-achievement"><h3>NMIMS Qiskit Fall Fest 2026</h3><p>Finalist</p></div>
+          <div class="card card-achievement"><h3>ISB Consulting Consortium 2026</h3><p>Selected participant</p></div>
+          <div class="card card-achievement"><h3>IIT (BHU) Sangyan Hackathon 2026</h3><p>Participant</p></div>
+          <div class="card card-achievement"><h3>IIM Shillong Case Competition</h3><p>Selected for Round 2</p></div>
+        </div>
       </div>
     </section>
 
@@ -162,37 +161,36 @@
         <div class="card-grid three-col">
           <div class="card">
             <h3>Programming and development</h3>
-            <ul class="tag-list">
-              <li>Python</li><li>HTML</li><li>CSS</li><li>Basic SQL</li><li>Basic web development</li>
-            </ul>
+            <ul class="tag-list"><li>Python</li><li>HTML</li><li>CSS</li><li>Basic SQL</li><li>Basic web development</li></ul>
           </div>
           <div class="card">
             <h3>Tools and technologies</h3>
-            <ul class="tag-list">
-              <li>Git</li><li>GitHub</li><li>Qiskit</li>
-            </ul>
+            <ul class="tag-list"><li>Git</li><li>GitHub</li><li>Qiskit</li></ul>
           </div>
           <div class="card">
             <h3>Business and research interests</h3>
-            <ul class="tag-list">
-              <li>Product management</li><li>Technology consulting</li><li>Entrepreneurship</li><li>AI and emerging technologies</li><li>Platform economics</li>
-            </ul>
+            <ul class="tag-list"><li>Product management</li><li>Technology consulting</li><li>Entrepreneurship</li><li>AI and emerging technologies</li><li>Platform economics</li></ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section section-dark">
+    <section id="contact" class="section contact-section">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="section-intro">The best way to reach me is by email.</p>
-        <ul class="contact-list">
-          <li><span>Email</span><a href="mailto:ezekiel.tony26@iimb.ac.in">ezekiel.tony26@iimb.ac.in</a></li>
-          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/ezekieltony/" target="_blank" rel="noopener">linkedin.com/in/ezekieltony</a></li>
-          <li><span>GitHub</span><a href="https://github.com/ezekieltony" target="_blank" rel="noopener">github.com/ezekieltony</a></li>
-          <li><span>Location</span>Mumbai, Maharashtra, India</li>
-        </ul>
+        <div class="contact-box">
+          <div>
+            <h2>Get in touch</h2>
+            <p class="contact-text">I'm happy to talk about projects, research, internships or anything at the edge of technology and business.</p>
+            <a class="btn btn-primary" href="mailto:ezekiel.tony26@iimb.ac.in">Email me</a>
+          </div>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:ezekiel.tony26@iimb.ac.in">ezekiel.tony26@iimb.ac.in</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/ezekieltony/" target="_blank" rel="noopener">linkedin.com/in/ezekieltony</a></li>
+            <li><span>GitHub</span><a href="https://github.com/ezekieltony" target="_blank" rel="noopener">github.com/ezekieltony</a></li>
+            <li><span>Location</span>Mumbai, Maharashtra, India</li>
+          </ul>
+        </div>
       </div>
     </section>
 
